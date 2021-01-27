@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:url_strategy/url_strategy.dart';
+
 import 'get_benford.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setPathUrlStrategy();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,13 +27,12 @@ class _ClipboardExample extends StatefulWidget {
 }
 
 class _ClipboardExampleState extends State<_ClipboardExample> {
-
   String _textValue = '';
 
-  void _setClipboard() async {
+  /*void _setClipboard() async {
     ClipboardData data = ClipboardData(text: 'My Text');
     await Clipboard.setData(data);
-  }
+  }*/
 
   void _getClipboard() async {
     ClipboardData data = await Clipboard.getData(Clipboard.kTextPlain);
@@ -50,9 +54,7 @@ class _ClipboardExampleState extends State<_ClipboardExample> {
         ],
         title: Text('Benford'),
       ),
-      body: Center(
-        child: GetBenford(_textValue) ),
+      body: Center(child: GetBenford(_textValue)),
     );
   }
 }
-
