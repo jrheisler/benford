@@ -1,6 +1,6 @@
 # benford
 
-A new Flutter application.
+https://benford-7cb47.web.app/#/
 
 ## Getting Started
 
